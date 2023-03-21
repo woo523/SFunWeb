@@ -98,12 +98,12 @@
 			// 페이지 이동없이 디비에 가서 아이디 중복체크해서 결과를 가져와서 출력
 			// idCheck.jsp
 			$.ajax({
-				url:'MemberIdCheck.me',
+				url:'${pageContext.request.contextPath }/member/idCheck',
 				data:{'id':$('.id').val()},
 				success:function(result){
-// 					alert(result);
+//  					alert(result);
 					// result.trim() => 결과값 앞뒤로 공백 제거
-					if(result.trim()=="아이디 중복"){
+					if(result.trim()=="id dup"){
 						$('.divresult').html(result).css("color","red");
 					}else{
 						$('.divresult').html(result).css("color","blue");
@@ -145,7 +145,7 @@
 <!-- 본문내용 -->
 <article>
 <h1>Join Us</h1>
-<form action="MemberInsertPro.me" id="join" method="post">
+<form action="${pageContext.request.contextPath }/member/insertPro" id="join" method="post">
 <fieldset>
 <legend>Basic Info</legend>
 <label>User ID</label>

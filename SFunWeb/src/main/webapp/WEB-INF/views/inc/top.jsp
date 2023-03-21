@@ -48,27 +48,38 @@
 // }
 %>
 
+<script type="text/javascript">
+function fun1() {
+	if(confirm("로그아웃 하시겠습니까?")==false){
+		return;
+	}else{
+		location.href="${pageContext.request.contextPath }/member/logout";
+	}
+}
+</script>
+
+
 <c:if test="${! empty sessionScope.id}">
 	<div id="login">${sessionScope.id } 님 | 
-                <a href="MemberLogout.me">logout</a> | 
-                <a href="MemberUpdateForm.me">update</a></div>	
+                <a onclick="fun1()">logout</a> | 
+                <a href="${pageContext.request.contextPath }/member/update">update</a></div>	
 </c:if>
 
 <c:if test="${empty sessionScope.id }">
-	<div id="login"><a href="MemberLoginForm.me">login</a> | 
-                <a href="MemberInsertForm.me">join</a></div>
+	<div id="login"><a href="${pageContext.request.contextPath }/member/login">login</a> | 
+                <a href="${pageContext.request.contextPath }/member/insert">join</a></div>
 </c:if>
 
 <div class="clear"></div>
-<!-- 로고들어가는 곳 -->
+<!-- 로고들어가는 곳 --> 
 <div id="logo"><img src="${pageContext.request.contextPath }/resources/images/logo.gif" width="265" height="62" alt="Fun Web"></div>
 <!-- 로고들어가는 곳 -->
 <nav id="top_menu">
 <ul>
-	<li><a href="MemberMain.me">HOME</a></li>
-	<li><a href="CompanyWelcome.co">회사소개</a></li>
+	<li><a href="${pageContext.request.contextPath }/main/main">HOME</a></li>
+	<li><a href="${pageContext.request.contextPath }/company/welcome">회사소개</a></li>
 	<li><a href="#">SOLUTIONS</a></li>
-	<li><a href="BoardList.bo">CUSTOMER CENTER</a></li>
+	<li><a href="${pageContext.request.contextPath }/board/list">CUSTOMER CENTER</a></li>
 	<li><a href="#">CONTACT US</a></li>
 </ul>
 </nav>
