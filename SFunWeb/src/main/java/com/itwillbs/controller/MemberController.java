@@ -120,7 +120,7 @@ public class MemberController {
 	
 	
 	// 가상주소 http://localhost:8080/SFunWeb/member/listmap
-	@RequestMapping(value = "/member/insert", method = RequestMethod.GET)
+	@RequestMapping(value = "/member/listmap", method = RequestMethod.GET)
 	public String listmap(Model model) {
 		
 		List<Map<String,Object>> memberListmap = memberService.getMemberListMap();

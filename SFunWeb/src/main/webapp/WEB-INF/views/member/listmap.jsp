@@ -8,15 +8,21 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h2>listmap</h2>
+
+<table border="1">
+
+
+<c:forEach var="dto" items="${memberListmap }">
+
+<tr><td>${dto.memberId }</td><td>${dto.memberPass }</td>
+<td>${dto.memberName }</td><td>${dto.memberDate }</td></tr>
 
 
 
-<c:forEach var=" memberListMap" items="${dto }">
-
-
-
-${dto.memberId }
 </c:forEach>
+
+</table>
 
 
 

@@ -11,9 +11,18 @@ public class PageDTO {
 	private int count;
 	private int pageCount;
 	private int endRow;
+	private String search;
 
 	
 	
+	public String getSearch() {
+		return search;
+	}
+
+	public void setSearch(String search) {
+		this.search = search;
+	}
+
 	@Override
 	public String toString() {
 		return "PageDTO [pageSize=" + pageSize + ", pageNum=" + pageNum + ", currentPage=" + currentPage + ", startRow="

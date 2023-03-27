@@ -54,12 +54,11 @@
 			
 			//초기화
 			$('table').html('');
-			
 			$.ajax({
-				url:'BoardJson.bo',
+				url:'${pageContext.request.contextPath }/board/listjson',
+// 				data:{이름:값},
 				dataType:'json',
 				success:function(arr){
-					
 //			        반복해서 출력 .each()
 					$.each(arr,function(index,item){
 //		 				alert(index);

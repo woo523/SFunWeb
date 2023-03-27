@@ -54,7 +54,7 @@
     </resultMap>
     
      <select id="getMemberListMap" resultMap="memberMap">
-    	select *
+    	select id, pass, name, date
     	from members
     </select>
     
